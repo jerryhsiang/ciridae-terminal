@@ -447,7 +447,7 @@ export default function App() {
       color: "#ff9900",
       render: () => (
         <div style={{ flex: 1, overflowY: "auto", overflowX: "auto" }}>
-          <table style={{ width: "100%", borderCollapse: "collapse", fontFamily: mono, fontSize: 11 }}>
+          <table style={{ width: "100%", tableLayout: "fixed", borderCollapse: "collapse", fontFamily: mono, fontSize: 11 }}>
             <thead>
               <tr style={{ background: "#111", position: "sticky", top: 0, zIndex: 2 }}>
                 {[["n", "Fund"], ["a", "AUM"], ["c", "Cos"], ["s", "AIS"], ["d", "Dur"], ["o", "Opp"], ["r", "6M%"], ["rc", "CW%"]].map(([k, l]) => (
@@ -723,7 +723,7 @@ export default function App() {
           const def = PANEL_DEFS[id];
           if (!def) return null;
           return (
-            <div key={id} style={{ background: "#000", display: "flex", flexDirection: "column", overflow: "hidden" }}>
+            <div key={id} style={{ background: "#000", display: "flex", flexDirection: "column", overflow: "hidden", minWidth: 0, minHeight: 0 }}>
               <WinBar
                 title={def.title}
                 color={def.color}

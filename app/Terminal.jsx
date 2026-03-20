@@ -271,10 +271,6 @@ export default function App() {
     return "";
   });
 
-  // Show setup on first load if no key
-  useEffect(() => {
-    if (!apiKey) setShowSetup(true);
-  }, []);
 
   const saveKey = (p, k) => {
     setProvider(p);

@@ -314,7 +314,11 @@ export default function App() {
   const run = useCallback(async (text) => {
     const q = text || query;
     if (!q.trim() || loading) return;
-    if (!apiKey) { setShowSetup(true); return; }
+    if (!apiKey) {
+      setMsgs(p => [...p, { role: "user", text: q }, { role: "assistant", text: "⚠ No API key connected. Click the **⚠ NO KEY** button in the top-right corner to add your Claude or ChatGPT API key." }]);
+      setQuery("");
+      return;
+    }
 
     setMsgs(p => [...p, { role: "user", text: q }]);
     setQuery("");

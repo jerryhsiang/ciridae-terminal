@@ -2,7 +2,9 @@
 
 Bloomberg-style intelligence terminal for PE fund AI transformation analysis.
 
-147 funds · 5,426 portfolio companies · 27 verticals · Natural language queries powered by your own AI API key.
+**[Live Demo](https://ciridae-terminal.vercel.app)**
+
+147 funds · 5,426 portfolio companies · 3,170 company-level profiles · 27 verticals · Natural language queries powered by your own AI API key.
 
 ## How It Works
 
@@ -26,19 +28,20 @@ That's it. No API keys on your end. Zero server cost.
 ## Features
 
 - **BYOK (Bring Your Own Key)** — Supports Claude (Anthropic) and ChatGPT (OpenAI)
-- **Onboarding modal** with step-by-step instructions for getting an API key
-- **Fund Rankings** — Sortable data grid, click any fund for detail
-- **AI Query Terminal** — Natural language questions against the full dataset
-- **Strategy Map** — Durability vs Opportunity scatter with fund archetypes
-- **Sector Map & Alpha Targets** — Sector scores + transformation targets
-- **Window Management** — Close, minimize, maximize any panel
-- **Clickable Ticker** — Scrolling fund scores, pauses on hover
+- **Fund Rankings** — Sortable data grid across 41 PE funds with AUM, AI Score, Durability, Opportunity, and returns
+- **Portfolio Drilldown** — Click any fund to see its portfolio companies ranked by AI transformation scores (3,170 companies across 36 funds)
+- **AI Query Terminal** — Natural language questions against the full dataset with preset commands (COMP, RANK, ALPHA, SECTOR, DEEP, CORR)
+- **Strategy Map** — Durability vs Opportunity scatter plot with fund archetypes (Disruptor, Fortress, Balanced, Mid)
+- **Sector Map & Alpha Targets** — Sector AI scores + highest opportunity-durability gap targets
+- **Window Management** — Close, minimize, maximize any panel; restore from top bar
+- **Clickable Ticker** — Scrolling fund scores, pauses on hover, click to drill in
 
 ## Architecture
 
 - Next.js 14 (App Router) — static site, no API routes
 - AI calls go directly from browser to Anthropic/OpenAI (BYOK)
 - API keys stored in localStorage only — never touch any server
+- 3,170 portfolio companies embedded as inline data — zero external data fetching
 - Zero external UI libraries — pure React + inline styles
 - Fonts: Share Tech Mono (data) + Roboto Condensed (UI labels)
 
